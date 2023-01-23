@@ -12,10 +12,5 @@ def adivinador():
         if IAnum == "N":
             IA = True
 
-    
-
-
-
-
 if __name__ == '__main__':
     adivinador()
