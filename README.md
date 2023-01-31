@@ -1,4 +1,4 @@
-# python-curse
+# Python-curse
 This is a repo for learn and use Python for development
 
 # Data Types
@@ -7,4 +7,3 @@ This is a repo for learn and use Python for development
 - Integers
 - Booleans
 
-# 
