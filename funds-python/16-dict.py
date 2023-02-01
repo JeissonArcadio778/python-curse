@@ -20,11 +20,49 @@ person = {
     'langs': ['NodeJS', 'Python']
 }
 
+# Create: 
+
+person['nickname'] = 'yeye'
+
+
 # Update: 
 
 person['name'] = 'Eduardo'
 person['age'] -= 8
-# Its a list
+# Its a list:
 person['langs'].append('Go')
 
 print(person)
+
+
+# Delete 
+
+del person['last_name']
+
+person.pop('age') # Is necessary the argument 
+print(person)
+
+# Other Methods
+
+print('Items')
+print(person.items())
+
+print('Keys')
+print(person.keys())
+
+print('Values')
+print(person.values())
+
+# Items
+# dict_items([('name', 'Eduardo'), ('langs', ['NodeJS', 'Python', 'Go'])])
+# Keys
+# dict_keys(['name', 'langs'])
+# Values
+# dict_values(['Eduardo', ['NodeJS', 'Python', 'Go']])
+
+# Convert tuples tu lists
+
+k = list(person.keys())
+v = list(person.values())
+print(k)
+print(v)
