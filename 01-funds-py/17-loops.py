@@ -20,7 +20,7 @@ while counter < 20:
     counter += 1
     if counter < 15:
         continue # Continue to complete the sentence
-    # print(counter)
+    print(counter)
 
 
 # FOR: is used when we have some number of conditions for some element
@@ -86,6 +86,8 @@ data_harry = [
 
 for character in data_harry:
     print('Name =>', character["name"])
+
+
 
 # Ciclos anidados
 
