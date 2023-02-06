@@ -42,11 +42,11 @@ numbers[-1] = 'Last'
 
 numbers.append(700) # Last position
 
-numbers.insert(0,'Hello') # anyone postion: 0,1,2,3-- And does not erased
+numbers.insert(0,'Hello') # anyone position: 0,1,2,3-- And does not erased the old element
 
 numbers.insert(2,'Change')
 
-# Add two lists
+# Add two lists: sum lists
 
 task_uni = ['Read Calculus', 'Do exercises']
 task_platzi = ['Practice Python', 'Lear AWS']
@@ -58,17 +58,13 @@ print(tasks_yy)
 # Ask where is the index
 
 ix = tasks_yy.index('Practice Python')
-
 tasks_yy[ix] = 'Learn and practice python'
-
 print(tasks_yy)
 
 # DELETE
 
 tasks_yy.remove('Do exercises')
-
 print(tasks_yy)
-
 
 task_platzi.pop() # delete last element
 
