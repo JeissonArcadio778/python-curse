@@ -11,7 +11,7 @@ print(10 ** 10)
 # Modulo
 print(10 % 2)
 
-# get the int 
+# get the int divition 
 print(10 // 3 ) # 3
 
 
