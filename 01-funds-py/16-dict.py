@@ -20,30 +20,32 @@ person = {
     'langs': ['NodeJS', 'Python']
 }
 
-# Create: 
+# CREATE: 
 
 person['nickname'] = 'yeye'
 
 
-# Update: 
+# UPDATE: 
 
 person['name'] = 'Eduardo'
 person['age'] -= 8
+
 # Its a list:
 person['langs'].append('Go')
 
 print(person)
 
 
-# Delete 
+# DELETE: 
 
 del person['last_name']
 
 person.pop('age') # Is necessary the argument 
 print(person)
 
-# Other Methods
+# Other Methods: 
 
+# *they return in tuples*
 print('Items')
 print(person.items())
 
