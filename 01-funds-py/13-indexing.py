@@ -17,7 +17,7 @@ print(text[6:10]) # is
 print(text[0:5]) # Pytho
 print(text[:5]) # Pytho
 
-# n is my priorit
-print(text[5:-1]) 
+# n s m pirt - Jumps
+print(text[5:-1, 2]) 
 # n is my priority
-print(text[5:])
+print(text[:5])
