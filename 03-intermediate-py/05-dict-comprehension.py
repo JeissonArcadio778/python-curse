@@ -1,3 +1,7 @@
+# Syntaxes: 
+
+# {key:value for var in iterable if condition}
+
 
 '''
 dict_num = {}
