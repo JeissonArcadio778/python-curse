@@ -30,11 +30,31 @@ for country in countries:
 print(population) # {'mx': 5, 'col': 49, 'brz': 97, 'arg': 74}
 
 
-population = { country : random.randint(1,100) for country in countries}
-print(population) # {'mx': 22, 'col': 80, 'brz': 85, 'arg': 13}
+population_v2 = { country : random.randint(1,100) for country in countries}
+print(population_v2) # {'mx': 22, 'col': 80, 'brz': 85, 'arg': 13}
 
 # union two list to convert to dictionary 
 names = ['yy', 'lokita', 'maria', 'julio']
 ages = [22,21,21,99]
 dict_person = {names[i]: ages[i] for i in range(len(names))}
-print(dict_person)
+print(dict_person) # {'yy': 22, 'lokita': 21, 'maria': 21, 'julio': 99}
+
+
+# Conditionals in the dictionary comprehension
+
+result = { country : population for (country,population) in population_v2.items() if population > 50} 
+
+print(result)
+
+
+# Examples: 
+# Get the vocals
+text = "Hello World Friend"
+vocals = { c:c.upper() for c in text if c in 'aeiou'}
+print(vocals)
+
+# count repetitions: 
+
+text = "Hola a todos, esta es una cadena de texto de prueba."
+unique = { c: text.count(c) for c in text if c in 'aeiou' }
+print(unique)
