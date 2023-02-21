@@ -23,6 +23,9 @@ def add_taxes(item_list):
     return item_list
 
 new_items = list(map(add_taxes, items))
+
+# PROBLEM: 
+
 print(new_items) # [{'product': 'shirt', 'price': 100, 'taxes': 19.0}, {'product': 't-shirt', 'price': 200, 'taxes': 38.0}, {'product': 'jean', 'price': 300, 'taxes': 57.0}]
 print(items) # [{'product': 'shirt', 'price': 100, 'taxes': 19.0}, {'product': 't-shirt', 'price': 200, 'taxes': 38.0}, {'product': 'jean', 'price': 300, 'taxes': 57.0}]
 
