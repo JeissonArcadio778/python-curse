@@ -5,7 +5,6 @@ import sys
 print(sys.path) # Where is running the py file
 
 
-
 import re # regular expressions 
 
 text = 'My false name is 3052285678, the country code 18 and my lucky number is 13'
