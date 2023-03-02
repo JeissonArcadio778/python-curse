@@ -1,3 +1,8 @@
+'''
+iter() nos permite controlar la forma en que se ejecutar un iterador, esto nos ayuda a no ocupar tanta memoria
+'''
+
+
 for i in range(1,11):
     print(i)
 
