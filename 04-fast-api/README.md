@@ -4,6 +4,8 @@ Is a modern framework for create APIs with Python.
 
 # Notes: 
 
+pip install fastapi
+pip install uvicorn
 # Generate .gitignore file 
 gitignore.io
 # Create virtual environment
@@ -19,13 +21,7 @@ pip install -r requirements.txt
 
 # Run
 
-python3 -m venv venv
 
-source venv/bin/activate
-
-pip install fastapi
-
-pip install uvicorn
 
 - Its like a nodemon: 
 uvicorn main:app --reload --port 5000
