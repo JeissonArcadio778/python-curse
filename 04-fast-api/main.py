@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Body
 from fastapi.responses import HTMLResponse
 
 app = FastAPI()
@@ -45,19 +45,19 @@ movies = [
 ]
 
 
-@app.get("/movies", tags=['movies'])
+@app.get("/movies", tags= ['movies'])
 def get_movies():
     return movies
 
 # PARAMS: 
-@app.get("/movies/{id}", tags=['movies'])
+@app.get("/movies/{id}", tags= ['movies'])
 def get_movies(id : int):
     result = list(filter(lambda item: item['id'] == id, movies))
     return result
 
 # QUERY
 # http://127.0.0.1:5000/movies/?category=Acci%C3%B3n
-@app.get("/movies/", tags=['movies'])
+@app.get("/movies/", tags= ['movies'])
 def get_movies_by_query(category : str, year : str = None): 
 
     def query_movies(item):
@@ -70,3 +70,31 @@ def get_movies_by_query(category : str, year : str = None):
     else:
         return list(filter(query_movies, movies))
 
+@app.post("/movies", tags= ['movies'])
+def create_movies(id: int = Body(), title: str = Body(), overview: str = Body(), year: int = Body(), rating : float = Body(), category : str = Body()):
+    movies.append({
+        "id" : id,
+        "title" : title,
+        "overview" : overview, 
+        "year" : year,
+        "rating" : rating,
+        "category" : category
+    })
+    return movies
+
+@app.put("/movies/", tags= ['movies'])
+def update_movies(id: int = Body(), title: str = Body(), overview: str = Body(), year: str = Body(), rating : float = Body(), category : str = Body()):
+    
+    for movie in movies: 
+        if movie['id'] == id:
+                movie["title"] = title
+                movie["overview"] = overview 
+                movie["year"] = year
+                movie["rating"] = rating 
+                movie["category"] = category
+        else:
+            return "The Id there is not in DB"
+    
+
+
+    

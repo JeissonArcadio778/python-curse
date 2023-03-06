@@ -9,7 +9,7 @@ pip install uvicorn
 # Generate .gitignore file 
 gitignore.io
 # Create virtual environment
-python -m venv venv
+python3 -m venv venv
 # Activate virtual environment
 source venv/bin/activate
 # Deactivate virtual environment
@@ -20,9 +20,6 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 
 # Run
-
-
-
 - Its like a nodemon: 
 uvicorn main:app --reload --port 5000
 
@@ -30,3 +27,5 @@ uvicorn main:app --reload --port 5000
 # Automatic documentation with Swagger: 
 
 http://127.0.0.1:5000/docs
+
+/docs to see more information. 
