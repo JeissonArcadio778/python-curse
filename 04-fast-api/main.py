@@ -83,7 +83,7 @@ def create_movies(id: int = Body(), title: str = Body(), overview: str = Body(),
     return movies
 
 @app.put("/movies/", tags= ['movies'])
-def update_movies(id: int = Body(), title: str = Body(), overview: str = Body(), year: str = Body(), rating : float = Body(), category : str = Body()):
+def update_movie(id: int = Body(), title: str = Body(), overview: str = Body(), year: str = Body(), rating : float = Body(), category : str = Body()):
     
     for movie in movies: 
         if movie['id'] == id:
@@ -95,6 +95,12 @@ def update_movies(id: int = Body(), title: str = Body(), overview: str = Body(),
         else:
             return "The Id there is not in DB"
     
-
+@app.delete("/movies/{id}", tags = ['movies'])
+def delete_movie(id : int): 
+    for movie in movies:
+        if movie['id'] == id:
+            movies.remove(movie)
+    return movies
+ 
 
     
