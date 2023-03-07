@@ -1,5 +1,7 @@
 from fastapi import FastAPI, Body
 from fastapi.responses import HTMLResponse
+from pydantic import BaseModel
+from typing import Optional
 
 app = FastAPI()
 #Para cambiar el nombre de la aplicacion
@@ -7,6 +9,17 @@ app.title = "Mi aplicacion con FastAPI"
 
 #Para cambiar la version de la aplicacion
 app.version = "0.0.1"
+
+# Class from pydantic
+
+class Movies (BaseModel):
+    id : Optional[int]
+    title: str
+    overview: str
+    year: int
+    rating: float
+    category: int
+
 
 #los tags nos permite agrupar las rutas de la aplicacion
 @app.get("/", tags=['home'])
@@ -71,27 +84,29 @@ def get_movies_by_query(category : str, year : str = None):
         return list(filter(query_movies, movies))
 
 @app.post("/movies", tags= ['movies'])
-def create_movies(id: int = Body(), title: str = Body(), overview: str = Body(), year: int = Body(), rating : float = Body(), category : str = Body()):
+def create_movies(movie: Movies):
     movies.append({
-        "id" : id,
-        "title" : title,
-        "overview" : overview, 
-        "year" : year,
-        "rating" : rating,
-        "category" : category
+        "id" : movie.id,
+        "title" : movie.title,
+        "overview" : movie.overview, 
+        "year" : movie.year,
+        "rating" : movie.rating,
+        "category" : movie.category
     })
     return movies
 
-@app.put("/movies/", tags= ['movies'])
-def update_movie(id: int = Body(), title: str = Body(), overview: str = Body(), year: str = Body(), rating : float = Body(), category : str = Body()):
+@app.put("/movies/{id}", tags= ['movies'])
+def update_movie(id:int, movie : Movies):
     
-    for movie in movies: 
-        if movie['id'] == id:
-                movie["title"] = title
-                movie["overview"] = overview 
-                movie["year"] = year
-                movie["rating"] = rating 
-                movie["category"] = category
+    for item in movies: 
+        if item['id'] == id:
+                print(item)
+                item["title"] = movie.title
+                item["overview"] = movie.overview 
+                item["year"] = movie.year
+                item["rating"] = movie.rating 
+                item["category"] = movie.category
+                return movies
         else:
             return "The Id there is not in DB"
     
@@ -102,5 +117,7 @@ def delete_movie(id : int):
             movies.remove(movie)
     return movies
  
+
+
 
     
