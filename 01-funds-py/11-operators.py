@@ -1,4 +1,4 @@
-#  And. Yes or yes needs to be TRUE
+#  And.For True Yes or yes needs to be TRUE
 print(True and False) # FALSE
 print(False and False) # TRUE
 

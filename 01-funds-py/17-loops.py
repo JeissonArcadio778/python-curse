@@ -45,9 +45,12 @@ person = {
     'age' : 21
 }
 
-for key in person:
+for key in person: # By defect it loops for keys 
     # print(key)
     print(key, '=>', person[key])
+
+for value in person.values(): 
+    print("Value =>", value)
 
 for key, value in person.items():
     # print(key)
@@ -83,6 +86,9 @@ data_harry = [
         "gender": "male",
     }
 ]    
+
+for character in data_harry: 
+    print("Name: ", character["name"]) 
 
 for character in data_harry:
     print('Name =>', character["name"])

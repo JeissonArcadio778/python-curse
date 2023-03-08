@@ -21,37 +21,40 @@ types[0] = 'Watch platzi courses'
 print(types, type(types))
 
 
-# Slicing 
+# Slicing in lists
 print(numbers[2:4])
 
 # Questions:
-
 print(True in types) # True!
 
 
 # CRUD LISTS - LIST METHODS:
 
 # READ
-
 numbers = [1,2,3,4,5,6]
 print(numbers[1])
 
 
 # CREATED
-numbers[-1] = 'Last'
+numbers[-1] = 'Replace last postion'
+print("Replace =>", numbers)
+# Replace => [1, 2, 3, 4, 5, 'Replace last postion']
 
 numbers.append(700) # Last position
 
 numbers.insert(0,'Hello') # anyone position: 0,1,2,3-- And does not erased the old element
 
-numbers.insert(2,'Change')
+numbers.insert(2,'Change, but not replace')
+
+print(numbers)
+# ['Hello', 1, 'Change', 2, 3, 4, 5, 'Replace last postion', 700]
 
 # Add two lists: sum lists
 
 task_uni = ['Read Calculus', 'Do exercises']
 task_platzi = ['Practice Python', 'Lear AWS']
 tasks_yy = task_uni + task_platzi
-print(tasks_yy)
+print(tasks_yy) # ['Read Calculus', 'Do exercises', 'Practice Python', 'Lear AWS']
 
 # UPDATE
 
@@ -81,5 +84,7 @@ print(sorting_list)
 sorting_letters = ['z', 'e', 'a', 'r']
 sorting_letters.sort()
 print(sorting_letters)
-
 # But is impossible sort list with different type elements
+
+# [0, 1, 2, 4, 10]
+# ['a', 'e', 'r', 'z']
