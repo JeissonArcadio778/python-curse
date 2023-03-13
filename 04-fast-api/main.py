@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Body
 from fastapi.responses import HTMLResponse
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Optional
 
 app = FastAPI()
@@ -14,12 +14,23 @@ app.version = "0.0.1"
 
 class Movies (BaseModel):
     id : Optional[int]
-    title: str
+    title: str = Field(default = "No name", min_length= 4, max_length= 5)
     overview: str
-    year: int
+    year: int = Field(default=2022, le=2022) # They values need to be min or equal than 2022
     rating: float
     category: int
 
+    class Config():
+        schema_extra = {
+            "defaults" : {
+                "id" : 1,
+                "title" : "No name",
+                "overview" : "Description",
+                "year": 2022,
+                "rating" : 0.0,
+                "category" : "No category"
+            }
+        }
 
 #los tags nos permite agrupar las rutas de la aplicacion
 @app.get("/", tags=['home'])
