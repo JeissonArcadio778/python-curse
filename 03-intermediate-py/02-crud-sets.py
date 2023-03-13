@@ -11,12 +11,12 @@ print('peru' in set_countries) # False
 
 # CREATE
 set_countries.add('pe')
-set_countries.add('pe')
+set_countries.add('us')
 print(set_countries)
 
 # UPDATE
 set_countries.update({'ar', 'ecua', 'pe'})
-print(set_countries)
+print("Update", set_countries)
 
 # DELETE
 set_countries.remove('ar') # If not exists: Error.
