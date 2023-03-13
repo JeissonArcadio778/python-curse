@@ -4,8 +4,7 @@
 
 Send to the shell.
 
-´´´ sh
+```sh
 cd game 
 python3 main 
-
-´´´
+```
