@@ -1,0 +1,7 @@
+services:
+  game-app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/game

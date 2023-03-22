@@ -30,7 +30,7 @@ for country in countries:
 print(population) # {'mx': 5, 'col': 49, 'brz': 97, 'arg': 74}
 
 
-population_v2 = { country : random.randint(1,100) for country in countries}
+population_v2 = {country : random.randint(1,100) for country in countries}
 print(population_v2) # {'mx': 22, 'col': 80, 'brz': 85, 'arg': 13}
 
 # union two list to convert to dictionary 

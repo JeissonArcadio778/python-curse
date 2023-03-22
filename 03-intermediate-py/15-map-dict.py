@@ -22,7 +22,10 @@ def add_taxes(item_list):
     item_list['taxes'] = item_list['price'] * .19
     return item_list
 
+
 new_items = list(map(add_taxes, items))
+
+
 
 # PROBLEM: 
 
