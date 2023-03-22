@@ -12,11 +12,12 @@ app.version = "0.0.1"
 
 # Class from pydantic
 
+# Validaciones: por defecto FastAPI tiene varias validaciones por defecto: si no exite un elemento en el query o su envio el tipo de dato que no corresponde. 
 class Movies (BaseModel):
     id : Optional[int]
     title: str = Field(default = "No name", min_length= 4, max_length= 5)
     overview: str
-    year: int = Field(default=2022, le=2022) # They values need to be min or equal than 2022
+    year: int = Field(default= 2022, le= 2022) # They values need to be min or equal than 2022
     rating: float
     category: int
 

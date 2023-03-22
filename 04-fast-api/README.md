@@ -28,9 +28,9 @@ uvicorn main:app --reload --port 5000
 
 http://127.0.0.1:5000/docs
 
-/docs to see more information. 
+/docs # to see more information. 
 
 
 # Creating Schemas: 
 
-We can create a Schema for movies. Like a simple and dynamic database
+We can create a Schema for movies. Like a simple and dynamic database.
