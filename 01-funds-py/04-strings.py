@@ -12,7 +12,7 @@ print(full_name)
 quote = "I'm Yeye"
 print(quote)
 
-quote2 = "And she said: 'Helloo World'";
+quote2 = "And she said: 'Helloo World'"
 print(quote2)
 
 # Format:

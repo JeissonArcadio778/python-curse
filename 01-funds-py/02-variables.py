@@ -2,7 +2,7 @@ print('Hello, Variables');
 
 # Variable for String
 my_name = "Jeisson"; 
-print(my_name);
+print(my_name)
 
 # Variable for Number
 my_age = 22; 
