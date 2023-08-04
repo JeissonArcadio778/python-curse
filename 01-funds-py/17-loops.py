@@ -92,7 +92,7 @@ for character in data_harry:
 
 for character in data_harry:
     print('Name =>', character["name"])
-
+# 
 
 
 # Ciclos anidados
