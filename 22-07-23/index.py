@@ -128,7 +128,7 @@ for person in data_harry:
 
 matriz = [
     [1, 2, 3],
-    #   [4, 5, 6],
+    [4, 5, 6],
     [7, 8, 9],
 ]
 
@@ -152,8 +152,28 @@ for row in matriz:
     They can be modify
 """
 
-set_faras = {["julio"], "maria", "valen", "pulga", "yeye", True, "yeye"}
+set_faras = {"julio", "maria", "valen", "pulga", "yeye", True, "yeye"}
 
 print(set("yeye"))  # {'y', 'e'}
 print(set(("col", "mx", "per")))
 print(set([1, 1, 1, 2]))  # {1, 2} --> list({1,2})
+
+# List comprehensions
+
+numbers = []
+
+for number in range(1,11):
+    numbers.append(number)
+print(numbers) # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Using list comprehensions
+
+numbers_lscom = [ number for number in range(1,11)]
+print(numbers_lscom) # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+numbers2_lscom = [number * 2 for number in range(1,6)]
+print(numbers2_lscom) # [2, 4, 6, 8, 10]
+
+## Example: only odds
+only_odd_numbers = [ number for number in range(1,10) if number % 2 == 0]
+print(only_odd_numbers) # [2, 4, 6, 8]
