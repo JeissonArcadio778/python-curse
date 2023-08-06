@@ -24,17 +24,51 @@ def calculate_circle_are (r:float) -> float:
 result: float = calculate_circle_are(3.6)
 print(result)
 
-# Ejercicio 4: Conversor de Temperatura
+# TODO: Ejercicio 4: Conversor de Temperatura
 # Convierte grados Celsius a Fahrenheit y viceversa. Pide al usuario que ingrese una temperatura y si quiere convertirla a Celsius o Fahrenheit.
 
 # Ejercicio 5: Número Par o Impar
 # Pide al usuario un número e indica si es par o impar.
 
+def isOdd (number: int) -> bool:
+    if (number == 0):
+        return False
+    elif (number % 2 == 0):
+        return True
+    else:
+        return False
+
+user_number = int(input("Write a number: "))
+print(f"Number {user_number} is {isOdd(user_number)}")
+
 # Ejercicio 6: Mayor de Tres Números
 # Pide al usuario tres números y encuentra el mayor de los tres.
 
+def max_number(numbers: [int]):
+    max_number = 0
+    for number in numbers: 
+        if number > max_number: 
+            max_number = number
+    return max_number
+print(f"Max Number {max_number([10,5,1])}")
+
+# Min Number:
+def min_number(numbers: [int]) -> list:
+    min_number = 100
+    for number in numbers:
+        if number < min_number:
+            min_number = number
+    return min_number
+print(f"Min Number {min_number([10,5,1])}")
+
 # Ejercicio 7: Calificación de Examen
 # Pide al usuario su calificación en un examen (0-100) y asigna una letra correspondiente (A, B, C, etc.) según la calificación.
+
+def notes(note: int) -> str:
+    if (note > 80):
+        return "E"
+    elif (note < 80 and note > 60):
+        return "S"
 
 # Ejercicio 8: Lista de Compras
 # Permite al usuario ingresar varios elementos en una lista de compras y luego imprime toda la lista.
