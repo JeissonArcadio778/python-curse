@@ -69,12 +69,47 @@ def notes(note: int) -> str:
         return "E"
     elif (note < 80 and note > 60):
         return "S"
+    
+print(notes(70))
 
 # Ejercicio 8: Lista de Compras
 # Permite al usuario ingresar varios elementos en una lista de compras y luego imprime toda la lista.
 
+def show_items_in_list (items: list):
+    for item in items:
+        print(item)
+show_items_in_list(['Water', 'Eggs', 'Rice'])
+
 # Ejercicio 9: Contador de Vocales y Consonantes
 # Pide al usuario que ingrese una cadena y cuenta el número de vocales y consonantes en ella.
 
+import re
+
+def count_vocals_consonants (word: str) -> int:
+    word = word.lower()
+
+    patter_vocals = r'[aeiou]'
+    patter_consonants = r'[bcdfghjklmnpqrstvwxyz]'
+
+    count_vocals = len(re.findall(patter_consonants, word))
+    count_consonants = len(re.findall(patter_consonants, word))
+
+    return count_vocals, count_consonants
+
+
+number_vocals, number_consonants = count_vocals_consonants('CASA')
+
+print(f"Vocals {number_vocals}. Consonants {number_consonants}")
+
 # Ejercicio 10: Calculadora de Promedio
 # Pide al usuario que ingrese una serie de números (podría ser calificaciones, por ejemplo) y luego calcula e imprime el promedio.
+
+def averague_notes (notes: list) -> int:
+    sum_notes = 0
+    for note in notes: 
+        sum_notes += note     
+    return sum_notes/len(notes)
+
+print(averague_notes([3,3,3]))
+
+
