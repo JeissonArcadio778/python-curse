@@ -112,4 +112,49 @@ def averague_notes (notes: list) -> int:
 
 print(averague_notes([3,3,3]))
 
+# PRACTICTE COMPREHENSIONS:
 
+# Ejercicios con List Comprehensions:
+
+# 1. Generar una lista con los cuadrados de los primeros 10 números naturales.
+
+numbers = [number for number in range(1,11)]
+print(numbers)
+numbers_sqrt = [number ** 2 for number in numbers]
+print(numbers_sqrt) 
+
+# 2. Filtrar los números pares de una lista dada.
+
+numbers = [number for number in range(1,11)]
+odd_numbers = [number for number in numbers if number % 2 == 0]
+print(odd_numbers)
+
+# 3. Convertir una lista de cadenas a una lista de sus respectivas longitudes.
+string_list = ['Loquita', 'Yeye', 'Maria', 'Julio', 'Valen', 'Pulga']
+count_string_list = [len(string) for string in string_list]
+print(count_string_list)
+
+# 4. Obtener una lista de las vocales presentes en una cadena de texto.
+
+full_name = 'Sara Isabel Gomez Jaramillo'
+vocals = 'aeiou'
+vocals_in_full_name = [ vocal for vocal in full_name.lower() if vocal in vocals]
+print(vocals_in_full_name)
+
+# 5. Generar una lista de las potencias de 2 hasta el exponente 10.
+
+potences = [2 * exponent for exponent in range(1, 11)]
+print(potences)
+
+# Ejercicios con Dict Comprehensions:
+
+# 6. Crear un diccionario con los cuadrados de los primeros 5 números naturales como claves y sus respectivos valores originales.
+
+# 7. Convertir una lista de palabras en un diccionario donde las claves son las palabras y los valores son sus longitudes.
+
+
+# 8. Obtener un diccionario con las letras de una cadena de texto y su frecuencia en la cadena.
+
+# 9. Crear un diccionario con los primeros 5 números naturales como claves y sus raíces cuadradas como valores.
+
+# 10. Generar un diccionario con los caracteres de una cadena de texto como claves y el número de veces que aparecen como valores.

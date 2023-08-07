@@ -177,3 +177,4 @@ print(numbers2_lscom) # [2, 4, 6, 8, 10]
 ## Example: only odds
 only_odd_numbers = [ number for number in range(1,10) if number % 2 == 0]
 print(only_odd_numbers) # [2, 4, 6, 8]
+
