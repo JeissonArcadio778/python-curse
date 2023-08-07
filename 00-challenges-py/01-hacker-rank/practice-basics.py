@@ -122,6 +122,8 @@ numbers = [number for number in range(1,11)]
 print(numbers)
 numbers_sqrt = [number ** 2 for number in numbers]
 print(numbers_sqrt) 
+# Better way
+squares = [x** 2 for x in range(1,11)]
 
 # 2. Filtrar los números pares de una lista dada.
 
@@ -135,14 +137,12 @@ count_string_list = [len(string) for string in string_list]
 print(count_string_list)
 
 # 4. Obtener una lista de las vocales presentes en una cadena de texto.
-
 full_name = 'Sara Isabel Gomez Jaramillo'
 vocals = 'aeiou'
-vocals_in_full_name = [ vocal for vocal in full_name.lower() if vocal in vocals]
+vocals_in_full_name = [ vocal for vocal in full_name.lower() if vocal.lower() in vocals]
 print(vocals_in_full_name)
 
 # 5. Generar una lista de las potencias de 2 hasta el exponente 10.
-
 potences = [2 * exponent for exponent in range(1, 11)]
 print(potences)
 
