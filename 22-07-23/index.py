@@ -179,3 +179,13 @@ only_odd_numbers = [ number for number in range(1,10) if number % 2 == 0]
 print(only_odd_numbers) # [2, 4, 6, 8]
 
 # Dict comprehensions
+
+'''
+dict_num = {}
+for i in range(1,6):
+    dict_num[i] = i * 2
+print(dict_num)   # {1: 2, 2: 4, 3: 6, 4: 8, 5: 10} 
+
+dict_num_ls_cmp = {i: i* 2 for i in range(1,6)}
+print(dict_num_ls_cmp)   # {1: 2, 2: 4, 3: 6, 4: 8, 5: 10} 
+'''
