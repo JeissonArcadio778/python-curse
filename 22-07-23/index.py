@@ -189,3 +189,12 @@ print(dict_num)   # {1: 2, 2: 4, 3: 6, 4: 8, 5: 10}
 dict_num_ls_cmp = {i: i* 2 for i in range(1,6)}
 print(dict_num_ls_cmp)   # {1: 2, 2: 4, 3: 6, 4: 8, 5: 10} 
 '''
+
+dict_num = {}
+for index in range(1,11):
+    dict_num[index] = index * 2
+
+print(dict_num)
+
+dict_num_cmp = {i: i * 2 for i in range(1,11) if i % 2 == 0}
+print(dict_num_cmp)

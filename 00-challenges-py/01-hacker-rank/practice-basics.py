@@ -174,6 +174,9 @@ print(potences)
 
 # 6. Crear un diccionario con los cuadrados de los primeros 5 números naturales como claves y sus respectivos valores originales.
 
+sqrt_nums = {i*2: i for i in range(1, 6)}
+print(sqrt_nums)
+
 # 7. Convertir una lista de palabras en un diccionario donde las claves son las palabras y los valores son sus longitudes.
 
 
