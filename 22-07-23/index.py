@@ -143,7 +143,6 @@ for row in matriz:
     for column in row:
         print(column)
 
-
 # MIDDLE PYTHON
 
 """
@@ -162,21 +161,21 @@ print(set([1, 1, 1, 2]))  # {1, 2} --> list({1,2})
 
 numbers = []
 
-for number in range(1,11):
+for number in range(1, 11):
     numbers.append(number)
-print(numbers) # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(numbers)  # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # Using list comprehensions
 
-numbers_lscom = [ number for number in range(1,11)]
-print(numbers_lscom) # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numbers_lscom = [number for number in range(1, 11)]
+print(numbers_lscom)  # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-numbers2_lscom = [number * 2 for number in range(1,6)]
-print(numbers2_lscom) # [2, 4, 6, 8, 10]
+numbers2_lscom = [number * 2 for number in range(1, 6)]
+print(numbers2_lscom)  # [2, 4, 6, 8, 10]
 
 ## Example: only odds
-only_odd_numbers = [ number for number in range(1,10) if number % 2 == 0]
-print(only_odd_numbers) # [2, 4, 6, 8]
+only_odd_numbers = [number for number in range(1, 10) if number % 2 == 0]
+print(only_odd_numbers)  # [2, 4, 6, 8]
 
 # Dict comprehensions
 
@@ -191,10 +190,65 @@ print(dict_num_ls_cmp)   # {1: 2, 2: 4, 3: 6, 4: 8, 5: 10}
 '''
 
 dict_num = {}
-for index in range(1,11):
+for index in range(1, 11):
     dict_num[index] = index * 2
 
 print(dict_num)
 
-dict_num_cmp = {i: i * 2 for i in range(1,11) if i % 2 == 0}
+dict_num_cmp = {i: i * 2 for i in range(1, 11) if i % 2 == 0}
 print(dict_num_cmp)
+
+## List vs. tuples vs. sets
+
+"""
+
+Differences between Lists, Tuples, and Sets
+Data type	Mutable	Ordered	Indexing Duplicate elements
+    List	✓	    ✓	    ✓	        ✓
+    Tuple	x	    ✓	    ✓	        ✓
+    Set	    ✓	    x	    x	        x
+
+"""
+
+
+# Functions
+
+def find_volume(length=2, width=2, depth=1):
+    return length * width * depth, width, 'This Was A Simple Calculate'
+    # return [length * width * depth, width, 'hola'] for return like a list
+
+
+result = find_volume(20, 10, 11)
+print(result)  # tuple: (2200, 10, 'This Was A Simple Calculate')
+result, width, string = find_volume(30, 10)
+print(result, width, string)  # 2200, 10, 'This Was A Simple Calculate'
+result = find_volume(20, 10, 11)
+print(result[0])  # 2200
+
+# Lambdas == anonymous
+
+increment = lambda x: x + 1
+print(increment(1))
+
+# Working with list
+
+## MAP: return a transformtaion array
+
+numbers_v = [1, 2, 3, 4, 5]
+numbers_v1 = []
+for i in numbers_v:
+    numbers_v1.append(i * 2)
+
+print(numbers_v1)
+
+numbers_v3 = list(map(lambda i: i * 2, numbers_v))
+print(numbers_v3)
+
+# Example: sum two list
+
+numbers_1 = [1, 2, 3, 4]
+numbers_2 = [5, 6, 7]
+
+numbers_3 = list(map(lambda x, y: x + y, numbers_1, numbers_2))
+print(numbers_3)
+
