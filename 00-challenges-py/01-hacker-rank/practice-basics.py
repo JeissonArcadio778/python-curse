@@ -179,9 +179,12 @@ print(sqrt_nums)
 
 # 7. Convertir una lista de palabras en un diccionario donde las claves son las palabras y los valores son sus longitudes.
 
+word_list = ['Hello', 'World']
+dict_num_letters = {word: len(word) for word in word_list}
+print(dict_num_letters)
 
 # 8. Obtener un diccionario con las letras de una cadena de texto y su frecuencia en la cadena.
 
-# 9. Crear un diccionario con los primeros 5 números naturales como claves y sus raíces cuadradas como valores.
-
-# 10. Generar un diccionario con los caracteres de una cadena de texto como claves y el número de veces que aparecen como valores.
+word_example = 'Hello World'
+dict_count_letters = {letter: word_example.count(letter) for letter in word_example if letter != ' '}
+print(dict_count_letters)
