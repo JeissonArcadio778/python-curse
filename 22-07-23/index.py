@@ -1,7 +1,7 @@
 # 01-funds
 
-print("Hello World")
-name: str = input("whats your name? ")
+# print("Hello World")
+name: str = "yeye"
 words: str = f"Welcome {name} !!!"
 print(words)
 
@@ -251,4 +251,55 @@ numbers_2 = [5, 6, 7]
 
 numbers_3 = list(map(lambda x, y: x + y, numbers_1, numbers_2))
 print(numbers_3)
+
+# Dict Map:
+
+
+items = [
+    {
+        'product': 'shirt',
+        'price': 100
+    },
+    {
+        'product': 't-shirt',
+        'price': 200
+    },
+    {
+        'product': 'jean',
+        'price': 300
+    },
+]
+
+price_list = list(map(lambda item: item['price'], items))
+print(price_list)
+
+## agregate new attribute to dict
+
+def add_taxes(item_list):
+    item_list['taxes'] = item_list['prices'] * .19
+    return item_list
+
+new_items = list(map(add_taxes, items))
+
+# PROBLEM: I modified both arrays
+
+print(new_items) # [{'product': 'shirt', 'price': 100, 'taxes': 19.0}, {'product': 't-shirt', 'price': 200, 'taxes': 38.0}, {'product': 'jean', 'price': 300, 'taxes': 57.0}]
+print(items) # [{'product': 'shirt', 'price': 100, 'taxes': 19.0}, {'product': 't-shirt', 'price': 200, 'taxes': 38.0}, {'product': 'jean', 'price': 300, 'taxes': 57.0}]
+
+# Solution:
+
+def add_taxes(item):
+    item_list = item.copy()
+    item_list['taxes'] = item_list['price'] * .19
+    return item_list
+
+new_items = list(map(add_taxes, items))
+
+# PROBLEM: referencia en memeoria. El diccionario tiene referencia de memoria que no cambia cuando es modificada, como sucede con los otros tipos de datos primitivos. Por eso se modifican los dos arrays.
+
+# SOLUTION: romper la referencia en memoria. HACER UNA COPIA CON .COPY()
+print('New List')
+print(new_items) # [{'product': 'shirt', 'price': 100, 'taxes': 19.0}, {'product': 't-shirt', 'price': 200, 'taxes': 38.0}, {'product': 'jean', 'price': 300, 'taxes': 57.0}]
+print('Old List')
+print(items) # [{'product': 'shirt', 'price': 100}, {'product': 't-shirt', 'price': 200}, {'product': 'jean', 'price': 300}]
 
