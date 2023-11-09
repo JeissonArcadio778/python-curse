@@ -10,6 +10,8 @@ print('-1 =>', numbers[-1], type(numbers))
 # Index
 print(stringsTuple.index('maria'))
 
+print(stringsTuple[1], "////////")
+
 # Count
 print(stringsTuple.count('maria'))
 
